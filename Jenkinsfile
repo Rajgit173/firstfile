@@ -16,6 +16,8 @@ pipeline {
         stage('Build') {
             steps {
                 sh '''
+                pwd
+                ls -la
                 if [ -f "pom.xml" ]; then
                     mvn clean install
                 else
@@ -60,17 +62,6 @@ pipeline {
                 '''
             }
         }
-        stage('Build') {
-    steps {
-        sh '''
-        pwd
-        ls -la
-        mvn clean install
-        '''
-    }
-}
-
-        
     }
 
     post {
@@ -83,3 +74,5 @@ pipeline {
     }
 }
 
+
+        
