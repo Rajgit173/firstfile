@@ -60,6 +60,17 @@ pipeline {
                 '''
             }
         }
+        stage('Build') {
+    steps {
+        sh '''
+        pwd
+        ls -la
+        mvn clean install
+        '''
+    }
+}
+
+        
     }
 
     post {
